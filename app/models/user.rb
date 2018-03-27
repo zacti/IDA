@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	has_many :furniture
+	has_many :furnitures
 	has_secure_password
 	
 	validates :email, presence: true, uniqueness: true
