@@ -1,5 +1,5 @@
 	<div id="search">
-		<%= form_tag furniture_search_path,method: :get, remote: true do %>
+		<%= form_tag furnitures_path,method: :get, remote: true do %>
 		<%= text_field_tag :size,params[:size] %>
 		<%= submit_tag 'Search' %>
 		<%end%>
