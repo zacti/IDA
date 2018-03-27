@@ -1,0 +1,15 @@
+	<div id="search">
+		<%= form_tag furniture_search_path,method: :get, remote: true do %>
+		<%= text_field_tag :size,params[:size] %>
+		<%= submit_tag 'Search' %>
+		<%end%>
+	</div>
+
+	<% @furniture.each do |f| %>
+		<%#= f.image %>
+		<h1><%= f.name %></h1>
+		<h4><%= f.description %></h4>
+		<%= f.size %>
+	<% end %>
+
+	<%= link_to 'Upload Your Furniture', new_furniture_path %>

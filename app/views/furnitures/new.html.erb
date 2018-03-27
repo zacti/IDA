@@ -1,0 +1,24 @@
+<%= form_for @furniture do |f| %>
+
+<div class="furniture_field">
+<%= f.label :name %>
+<%= f.text_field :name %>
+</div>
+
+<div class="furniture_field">
+<%= f.label :description %>
+<%= f.text_field :description %>
+</div>
+
+<div class="furniture_field">
+<%= f.label :size %>
+<%= f.text_field :size %>
+</div>
+
+<div class="furniture_field">
+<%= f.file_field :image %>
+<%= f.submit 'Upload' %>
+</div>
+
+<% end %>
+

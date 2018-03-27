@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IDA</title>
+    <%= csrf_meta_tags %>
+     <link rel="icon" type="image/jpg" href="icon.jpg">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  </head>
+
+  <body>
+   <nav class="navbar navbar-default " id="navigation" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <%= link_to 'IDA Academy', root_path %>
+
+        </div> 
+           <form class="form-inline my-2 my-lg-0" style="float: right;">
+      <% if current_user %>
+        Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+
+      <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', new_user_path %>
+        <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+      <% end %>
+    </form>
+    </div>
+  </nav> 
+
+
+  <div id="header">
+    
+  </div>
+
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+
+    <%= yield %>
+  </body>
+</html>
