@@ -3,8 +3,11 @@ class Furniture < ApplicationRecord
 
   #mount_uploader :image, AvatarUploader
 
-  include PgSearch
-  	pg_search_scope :search_engine, :against => [:name, :size]
- 	# scope :name, -> (input_name) { where("name ILIKE ?", "%#{input_name}%") }
-  	scope :size, -> (input_size) { where("size ILIKE ?", "%#{input_size}%") }
+
+ 	scope :item, -> (input_item) { where("item ILIKE ?", "%#{input_item}%") }
+  	# scope :size, -> (size) { where size: size }
+
+  # def self.size(query)
+  #   where("size ILIKE :size", size: "%#{query}%")
+  # end
 end

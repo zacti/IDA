@@ -48,9 +48,17 @@ class FurnituresController < ApplicationController
     	redirect_to root_path
     end
 
+ #    def search
+ #    	@search = Furniture.where(nil)
+	# 	filtering_params(params).each do |key, value|
+	# 	@search = @search.public_send(key, value) if value.present?	
+	# 	end
 
-
-
+	# 	respond_to do |format| 
+	# 		format.html
+	# 		format.js 
+	# 	end 
+	# end
 
 	private
 	 def find_furniture
@@ -58,10 +66,10 @@ class FurnituresController < ApplicationController
     end
 
     def furniture_params
-      params.require(:furniture).permit(:name, :size, :description, :image)
+      params.require(:furniture).permit(:item, :category, :description, :image)
     end
 
     def filtering_params(params)
-    	params.slice(:name, :size)
+    	params.slice(:item , :category)
     end
 end
