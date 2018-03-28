@@ -32,13 +32,12 @@ class FurnituresController < ApplicationController
 	end
 
 	def edit
-		@furniture = current_user.furniture.find(params[:id])
+		@furniture = current_user.furnitures.find(params[:id])
 	end
 	
 	def update
 		@furniture = Furniture.find(params[:id])
-
-		@furniture.update_attributes(furniture)
+		@furniture.update_attributes(furniture_params)
 		redirect_to root_path
 	end
 
