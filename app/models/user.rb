@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   before_create {generate_token(:auth_token)}
 
+  mount_uploader :image, ImageUploader
+
   def user?
       self.type == "User"
   end
