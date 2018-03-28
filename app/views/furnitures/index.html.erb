@@ -12,6 +12,9 @@
 		<h1><%= f.item %></h1>
 		<h4><%= f.description %></h4>
 		<%= f.category %>
+		<%if current_user == f.user%>
+        <p> <%=link_to "edit", edit_furniture_path(f)%></p>
+        <% end %>
 		<br>______________________________<br>
 	<% end %>
 	</div>
