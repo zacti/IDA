@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :furnitures 
-  validates_confirmation_of :password
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   before_create {generate_token(:auth_token)}
 
