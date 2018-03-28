@@ -14,7 +14,7 @@ class FurnituresController < ApplicationController
 	end
 
 	def create
-		@furniture = current_user.furniture.new(furniture_params)
+		@furniture = current_user.furnitures.new(furniture_params)
 		if @furniture.save
 			redirect_to root_path
 		else
