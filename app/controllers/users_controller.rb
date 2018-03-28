@@ -6,10 +6,14 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
+
 		if @user.save 
-			redirect_to root_url, notice: "Thank you for signing up!"
+			session[:user_id] = @user.id # to automatically login a user that signed up
+    		flash[:notice] = "You are registered."
+			redirect_to root_url
 		else
-			render "new"
+			flash[:notice] = "Invalid email or password"
+			redirect_to new_user_path
 		end
 	end
 
@@ -20,9 +24,9 @@ def google_oauth2
  end
 
 private
-  def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
-    end
+def user_params
+  params.require(:user).permit(:email,:password_confirmation ,:password,:password_digest, :_destroy)
+end 
 
 
 end

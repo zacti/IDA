@@ -68,5 +68,3 @@ gem 'omniauth-google-oauth2'
 gem 'carrierwave', '~> 1.0'
 
 gem 'figaro'
-
-gem 'pg_search'

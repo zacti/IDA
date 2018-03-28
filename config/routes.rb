@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
   resources :users
+  resources :password_resets
   resources :furnitures
   post "/furniture/search" => "furnitures#index"
   root "home#index"

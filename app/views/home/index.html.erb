@@ -1,3 +1,10 @@
+    <iframe class ="map"
+ height="250px"
+ frameborder="0" style="border:0"
+ src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBX8hQcoSEtucwisPltvD2u0Xsl7nZg77I
+   &q=<%= h("IDA Academy").gsub(/(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)/, '\1+\2+\3+\4+\5+\6+\7+\8')%>&q=seattle+washington&q=arizona" allowfullscreen>
+</iframe>
+
 <div class="homeIndex"> Interior Archictecture Design</div>
-<%= link_to 'Get your model',furnitures_path %>
-<%= yield %>
+
+<%= link_to 'Get your model',furnitures_path , :class => "myButton"%>

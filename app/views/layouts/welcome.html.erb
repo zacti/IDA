@@ -1,0 +1,79 @@
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= stylesheet_link_tag 'welcome', media: 'all', 'data-turbolinks' => true %>
+   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+
+<body>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <%=image_tag("home1.jpg", :class => "d-block w-100", :alt => "IDA")%>
+        <div class="carousel-caption">
+        <h3>IDA</h3>
+        <p>Interior Archictecture Design</p>
+      </div>
+      </div>
+
+      <div class="item">
+        <%=image_tag("home2.jpg", :class => "d-block w-100", :alt => "IDA")%>
+         <div class="carousel-caption">
+        <h3>IDA</h3>
+        <p>Interior Archictecture Design</p>
+      </div>
+      </div>
+    
+      <div class="item">
+        <%=image_tag("home3.jpg", :class => "d-block w-100", :alt => "IDA")%>
+         <div class="carousel-caption">
+        <h3>IDA</h3>
+        <p>Interior Archictecture Design</p>
+      </div>
+      </div>
+
+
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span> 
+</a>
+<a class="right carousel-control" href="#myCarousel" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span> 
+</a>
+</div>
+</div>
+
+<nav class="navbar navbar-default " id="navigation" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <%= link_to 'IDA Academy', root_path %>
+        </div> 
+           <form class="form-inline my-2 my-lg-0" style="float: right;">
+      <% if current_user %>
+        Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %>
+      <% else %>
+        <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', new_user_path %>
+        <%= link_to "|Sign in with Google", "/auth/google_oauth2" %>
+      <% end %>
+    </form>
+    </div>
+  </nav>
+
+<div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+
+    <%= yield %>
+</body>

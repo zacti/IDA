@@ -16,10 +16,12 @@
 
  @import "bootstrap";
  @import "home";
+ @import "sessions";
 
 body {
 	font-family: 'Playfair Display', serif;
     color: black;
+    height: 200vh;
 }
 
 div.homeIndex{
@@ -31,23 +33,13 @@ div.homeIndex{
         -ms-animation: fadein 2s; /* Internet Explorer */
          -o-animation: fadein 2s; /* Opera < 12.1 */
             animation: fadein 2s;
-            position: absolute;
+            z-index: 0;
         }
 
 @keyframes fadein {
     from {opacity: 0;}
 	to { opacity: 1;}
 }        
-
-
-.courseHome {
-	float: right;
-	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
-}
 
 #navigation,.navbar .navbar-default{
   background-image: url("cement.jpg");
@@ -64,5 +56,4 @@ div.homeIndex{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    // margin-top: 50vh;
 }
