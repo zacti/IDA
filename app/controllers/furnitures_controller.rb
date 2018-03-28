@@ -66,7 +66,7 @@ class FurnituresController < ApplicationController
     end
 
     def furniture_params
-      params.require(:furniture).permit(:item, :category, :description, :image)
+      params.require(:furniture).permit(:item, :category, :description, {image:[]})
     end
 
     def filtering_params(params)
