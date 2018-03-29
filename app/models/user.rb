@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :furnitures 
   validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   before_create {generate_token(:auth_token)}
 
   mount_uploader :image, ImageUploader
